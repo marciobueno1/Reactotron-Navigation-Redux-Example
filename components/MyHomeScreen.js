@@ -36,8 +36,21 @@ class MyHomeScreen extends Component {
           onPress={() => this.props.dispatch(NavigationActions.navigate({ routeName: 'DrawerOpen' }))}
           title="Open Drawer"
         />
+        <Button
+          onPress={() => this.props.dispatch(NavigationActions.back())}
+          title="Go back home"
+        />
         <Text>
-          {JSON.stringify(this.props.nav)}
+          Routes[0]: {JSON.stringify(this.props.nav.routes[0], null, 2)}
+        </Text>
+        <Text>
+          {`Index[0]: ${this.props.nav.routes[0].index}`}
+        </Text>
+        <Text>
+          Routes[1]: {JSON.stringify(this.props.nav.routes[1], null, 2)}
+        </Text>
+        <Text>
+          {`Index[1]: ${this.props.nav.routes[1].index}`}
         </Text>
       </View>
     );
